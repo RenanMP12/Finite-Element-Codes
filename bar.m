@@ -102,13 +102,13 @@ xmin = xmin - 0.1*Lx;
 xmax = xmax + 0.1*Lx;
 axis([0 xmax -1 1]);
 
-new_coord = coordinate_matrix(:,2) + U*1000;
+new_coord = coordinate_matrix(:,2) + U*1000; % Coordinate node vector after bar deformation
 
-y = zeros(nel+1,1);
-plot(coordinate_matrix(:,2),y,'-o')
-title('Variable section bar')
-grid on
+y = zeros(nel+1,1);                          % Y coordinate vector
+plot(coordinate_matrix(:,2),y,'-o')          % Original position plot
+title('Variable section bar')                % Title plot
+grid on                                      
 grid minor
 hold on
-plot(new_coord,y,'-d')
-legend('Original position','Position after deformation')
+plot(new_coord,y,'-d')                       % Nodes position after bar deformation
+legend('Original position','Position after deformation')        
